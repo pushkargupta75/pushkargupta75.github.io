@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pushkar Gupta - Full Stack Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
 </head>
 <body>
     <!-- Navigation -->
@@ -45,7 +47,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
+        <div class="hero-container container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">
@@ -90,22 +92,16 @@
                 </div>
             </div>
         </div>
-        <div class="hero-scroll">
-            <div class="scroll-indicator">
-                <span>Scroll Down</span>
-                <i class="fas fa-arrow-down"></i>
-            </div>
-        </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section about">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="about-content">
+            <div class="about-content fade-in-up">
                 <div class="about-text">
                     <p class="about-description">
                         I'm a passionate Computer Science student currently pursuing my B.Tech from GL Bajaj Institute 
@@ -127,129 +123,101 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <div class="about-card">
-                        <div class="card-content">
-                            <h3>Quick Facts</h3>
-                            <ul class="facts-list">
-                                <li><i class="fas fa-map-marker-alt"></i> Kanpur, India</li>
-                                <li><i class="fas fa-graduation-cap"></i> B.Tech CSE Student</li>
-                                <li><i class="fas fa-code"></i> Full Stack Developer</li>
-                                <li><i class="fas fa-robot"></i> AI Enthusiast</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="about-card">
+                    <h3>Quick Facts</h3>
+                    <ul class="facts-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Kanpur, India</li>
+                        <li><i class="fas fa-graduation-cap"></i> B.Tech CSE Student</li>
+                        <li><i class="fas fa-code"></i> Full Stack Developer</li>
+                        <li><i class="fas fa-robot"></i> AI Enthusiast</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Skills & Technologies</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="skills-content">
-                <div class="skills-category">
+            <div class="skills-content fade-in-up">
+                <div class="skill-category">
                     <h3 class="category-title">Programming Languages</h3>
                     <div class="skills-grid">
                         <div class="skill-item">
                             <i class="fab fa-python"></i>
                             <span>Python</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90%"></div>
-                            </div>
+                            <span class="skill-level">90%</span>
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-js-square"></i>
                             <span>JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
-                            </div>
+                            <span class="skill-level">85%</span>
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-cuttlefish"></i>
                             <span>C++</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
+                            <span class="skill-level">80%</span>
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-java"></i>
                             <span>Java</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="70%"></div>
-                            </div>
+                            <span class="skill-level">70%</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="skills-category">
+                <div class="skill-category">
                     <h3 class="category-title">Web Technologies</h3>
                     <div class="skills-grid">
                         <div class="skill-item">
                             <i class="fab fa-html5"></i>
                             <span>HTML5</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="95%"></div>
-                            </div>
+                            <span class="skill-level">95%</span>
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-css3-alt"></i>
                             <span>CSS3</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90%"></div>
-                            </div>
+                            <span class="skill-level">90%</span>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-flask"></i>
                             <span>Flask</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
-                            </div>
+                            <span class="skill-level">85%</span>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-stream"></i>
                             <span>Streamlit</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
+                            <span class="skill-level">80%</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="skills-category">
+                <div class="skill-category">
                     <h3 class="category-title">Data Science & Tools</h3>
                     <div class="skills-grid">
                         <div class="skill-item">
                             <i class="fas fa-chart-bar"></i>
                             <span>Pandas</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
-                            </div>
+                            <span class="skill-level">85%</span>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-square-root-alt"></i>
                             <span>NumPy</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
+                            <span class="skill-level">80%</span>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-database"></i>
                             <span>SQL/MySQL</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
-                            </div>
+                            <span class="skill-level">85%</span>
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-git-alt"></i>
                             <span>Git/GitHub</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90%"></div>
-                            </div>
+                            <span class="skill-level">90%</span>
                         </div>
                     </div>
                 </div>
@@ -258,13 +226,13 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="section projects">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="projects-grid">
+            <div class="projects-grid fade-in-up">
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-robot"></i>
@@ -331,61 +299,49 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="education">
+    <section id="education" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title">Education & Certifications</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="education-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2023 - 2027</div>
-                        <h3 class="timeline-title">Bachelor of Technology</h3>
-                        <h4 class="timeline-subtitle">GL Bajaj Institute of Technology and Management</h4>
-                        <p class="timeline-description">
-                            Computer Science Engineering<br>
-                            Current CGPA: 8.92/10
-                        </p>
-                    </div>
+            <div class="fade-in-up" style="display: grid; gap: 1.5rem;">
+                <div class="education-item">
+                    <div class="education-year">2023 - 2027</div>
+                    <h3 class="education-title">Bachelor of Technology</h3>
+                    <div class="education-subtitle">GL Bajaj Institute of Technology and Management</div>
+                    <p>Computer Science Engineering | Current CGPA: 8.92/10</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2020 - 2023</div>
-                        <h3 class="timeline-title">Intermediate (10+2)</h3>
-                        <h4 class="timeline-subtitle">DR. Virendra Swarup Education Centre Kanpur</h4>
-                        <p class="timeline-description">
-                            12th Grade: 93%<br>
-                            10th Grade: 97%
-                        </p>
-                    </div>
+                <div class="education-item">
+                    <div class="education-year">2020 - 2023</div>
+                    <h3 class="education-title">Intermediate (10+2)</h3>
+                    <div class="education-subtitle">DR. Virendra Swarup Education Centre Kanpur</div>
+                    <p>12th Grade: 93% | 10th Grade: 97%</p>
                 </div>
-            </div>
-
-            <div class="certifications">
-                <h3 class="certifications-title">Certifications</h3>
-                <div class="cert-grid">
-                    <div class="cert-card">
-                        <i class="fab fa-python"></i>
-                        <h4>Python Fundamentals</h4>
-                        <p>Infosys Springboard</p>
-                    </div>
-                    <div class="cert-card">
-                        <i class="fab fa-python"></i>
-                        <h4>Python Fundamentals</h4>
-                        <p>HackerRank</p>
-                    </div>
-                    <div class="cert-card">
-                        <i class="fas fa-puzzle-piece"></i>
-                        <h4>Problem Solving</h4>
-                        <p>HackerRank</p>
-                    </div>
-                    <div class="cert-card">
-                        <i class="fab fa-java"></i>
-                        <h4>Java (Basic)</h4>
-                        <p>HackerRank</p>
+                
+                <div style="margin-top: 2rem;">
+                    <h3 style="color: var(--white); text-align: center; margin-bottom: 1.5rem;">Certifications</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                        <div class="education-item" style="text-align: center; border-left: none; border-top: 3px solid var(--primary);">
+                            <i class="fab fa-python" style="color: var(--primary); font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                            <h4 style="color: var(--white);">Python Fundamentals</h4>
+                            <p style="margin: 0;">Infosys Springboard</p>
+                        </div>
+                        <div class="education-item" style="text-align: center; border-left: none; border-top: 3px solid var(--primary);">
+                            <i class="fab fa-python" style="color: var(--primary); font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                            <h4 style="color: var(--white);">Python Fundamentals</h4>
+                            <p style="margin: 0;">HackerRank</p>
+                        </div>
+                        <div class="education-item" style="text-align: center; border-left: none; border-top: 3px solid var(--primary);">
+                            <i class="fas fa-puzzle-piece" style="color: var(--primary); font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                            <h4 style="color: var(--white);">Problem Solving</h4>
+                            <p style="margin: 0;">HackerRank</p>
+                        </div>
+                        <div class="education-item" style="text-align: center; border-left: none; border-top: 3px solid var(--primary);">
+                            <i class="fab fa-java" style="color: var(--primary); font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                            <h4 style="color: var(--white);">Java (Basic)</h4>
+                            <p style="margin: 0;">HackerRank</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -393,17 +349,17 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="section projects">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Let's Connect</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="contact-content">
+            <div class="contact-content fade-in-up">
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
-                    <p>I'm always open to discussing new opportunities and interesting projects.</p>
-                    <div class="contact-details">
+                    <p>I'm always open to discussing new opportunities and interesting projects. Let's create something amazing together!</p>
+                    <div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <span>pushkargupta993@gmail.com</span>
@@ -432,7 +388,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="contact-form">
+                <div style="background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); padding: 2rem; border-radius: 20px;">
                     <form id="contact-form">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -446,7 +402,7 @@
                         <div class="form-group">
                             <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
                             <i class="fas fa-paper-plane"></i>
                             Send Message
                         </button>
@@ -466,6 +422,5 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
