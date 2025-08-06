@@ -55,11 +55,11 @@
             // Enhanced typing animation
             const typeWriter = {
                 words: [
-                    'Full Stack Developer',
                     'Python Enthusiast', 
                     'AI & ML Student',
                     'Problem Solver',
-                    'Tech Innovator'
+                    'Tech Innovator',
+                    'FrontEnd Developer'
                 ],
                 currentWordIndex: 0,
                 currentCharIndex: 0,
