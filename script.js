@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
         align-items: center;
         justify-content: center;
         font-size: 1.25rem;
-        box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
         transform: translateY(100px);
         opacity: 0;
         transition: all 0.3s ease;
@@ -331,22 +331,31 @@ document.addEventListener('DOMContentLoaded', function() {
     
     scrollTopBtn.addEventListener('mouseenter', () => {
         scrollTopBtn.style.transform = 'translateY(-3px)';
-        scrollTopBtn.style.boxShadow = '0 12px 35px rgba(0, 212, 170, 0.4)';
+        scrollTopBtn.style.boxShadow = '0 12px 35px rgba(245, 158, 11, 0.4)';
     });
     
     scrollTopBtn.addEventListener('mouseleave', () => {
         scrollTopBtn.style.transform = 'translateY(0)';
-        scrollTopBtn.style.boxShadow = '0 8px 25px rgba(0, 212, 170, 0.3)';
+        scrollTopBtn.style.boxShadow = '0 8px 25px rgba(245, 158, 11, 0.3)';
     });
-
-    // Resume Functions
-    function downloadResume() {
-        // In a real implementation, you would link to your actual resume file
-        showNotification('Resume download will be available soon!', 'info');
-    }
-
-    function viewResume() {
-        // In a real implementation, you would open your resume in a new tab
-        showNotification('Resume viewer will be available soon!', 'info');
-    }
 });
+
+// Resume Functions
+function downloadResume() {
+    // In a real implementation, you would link to your actual resume file
+    showNotification('Resume download will be available soon!', 'info');
+    
+    // Example of how to trigger a download:
+    // const link = document.createElement('a');
+    // link.href = '/path/to/your/resume.pdf';
+    // link.download = 'Pushkar_Gupta_Resume.pdf';
+    // link.click();
+}
+
+function viewResume() {
+    // In a real implementation, you would open your resume in a new tab
+    showNotification('Resume viewer will be available soon!', 'info');
+    
+    // Example of how to open resume in new tab:
+    // window.open('/path/to/your/resume.pdf', '_blank');
+}
