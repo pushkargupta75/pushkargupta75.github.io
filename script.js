@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'AI & ML Student',
             'Problem Solver',
             'Tech Innovator',
-            'Frontend Developer'
+            'Frontend Developer',
+            'Data Science Learner'
         ],
         currentWordIndex: 0,
         currentCharIndex: 0,
@@ -184,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Contact form handling
+    // Contact form handling with EmailJS
     const contactForm = document.getElementById('contact-form');
     
     contactForm.addEventListener('submit', function(e) {
@@ -196,10 +197,40 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
         
-        // Simulate form submission
-        setTimeout(() => {
+        // Get form data
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+        
+        // EmailJS send function (you'll need to set this up)
+        emailjs.send('your_service_id', 'your_template_id', {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message,
+            to_email: 'pushkargupta993@gmail.com'
+        })
+        .then(function(response) {
             showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-            this.reset();
+            contactForm.reset();
+        })
+        .catch(function(error) {
+            showNotification('Failed to send message. Please try again or email me directly.', 'error');
+            console.error('EmailJS error:', error);
+        })
+        .finally(function() {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
+        
+        // Fallback for when EmailJS is not configured
+        setTimeout(() => {
+            if (!window.emailjs) {
+                showNotification('Email service not configured. Please email me directly at pushkargupta993@gmail.com', 'info');
+                contactForm.reset();
+            }
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         }, 2000);
@@ -208,24 +239,39 @@ document.addEventListener('DOMContentLoaded', function() {
     // Notification system
     function showNotification(message, type = 'info') {
         const notification = document.createElement('div');
+        const colors = {
+            success: '#10b981',
+            error: '#ef4444',
+            info: '#f59e0b'
+        };
+        
         notification.style.cssText = `
             position: fixed;
             top: 20px;
             right: 20px;
-            background: ${type === 'success' ? 'var(--success)' : 'var(--accent-primary)'};
+            background: ${colors[type]};
             color: white;
             padding: 1rem 1.5rem;
             border-radius: 12px;
-            box-shadow: 0 8px 25px var(--shadow-color);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             z-index: 10000;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             transform: translateX(100%);
             transition: transform 0.3s ease;
+            max-width: 350px;
+            word-wrap: break-word;
         `;
+        
+        const icons = {
+            success: 'check-circle',
+            error: 'exclamation-circle',
+            info: 'info-circle'
+        };
+        
         notification.innerHTML = `
-            <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+            <i class="fas fa-${icons[type]}"></i>
             ${message}
         `;
         
@@ -339,23 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollTopBtn.style.boxShadow = '0 8px 25px rgba(245, 158, 11, 0.3)';
     });
 });
-
-// Resume Functions
-function downloadResume() {
-    // In a real implementation, you would link to your actual resume file
-    showNotification('Resume download will be available soon!', 'info');
+    </script>
     
-    // Example of how to trigger a download:
-    // const link = document.createElement('a');
-    // link.href = '/path/to/your/resume.pdf';
-    // link.download = 'Pushkar_Gupta_Resume.pdf';
-    // link.click();
-}
-
-function viewResume() {
-    // In a real implementation, you would open your resume in a new tab
-    showNotification('Resume viewer will be available soon!', 'info');
-    
-    // Example of how to open resume in new tab:
-    // window.open('/path/to/your/resume.pdf', '_blank');
-}
+    <!-- EmailJS CDN (uncomment when you set up EmailJS) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
