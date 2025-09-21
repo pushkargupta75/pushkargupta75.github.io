@@ -513,8 +513,7 @@ body {
 /* Skills Section */
 .skills-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .skill-category {
@@ -541,6 +540,7 @@ body {
 
 .skills-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
 
@@ -548,15 +548,17 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 0.75rem;
+    padding: 1rem;
     background: var(--accent-light);
     border-radius: 12px;
     transition: all 0.3s ease;
+    justify-content: center;
 }
 
 .skill-item:hover {
     background: rgba(245, 158, 11, 0.2);
-    transform: translateX(5px);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
 }
 
 .skill-item i {
@@ -569,18 +571,13 @@ body {
 .skill-item span {
     font-weight: 500;
     color: var(--text-primary);
-    flex: 1;
-}
-
-.skill-level {
-    font-size: 0.875rem;
-    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 
@@ -600,13 +597,13 @@ body {
 }
 
 .project-image {
-    height: 160px;
+    height: 140px;
     background: var(--accent-gradient);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 3rem;
+    font-size: 2.5rem;
     position: relative;
     overflow: hidden;
 }
@@ -669,6 +666,7 @@ body {
 .project-links {
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 .project-link {
@@ -690,7 +688,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Education & Contact */
+/* Education */
 .education-item {
     background: var(--bg-glass);
     backdrop-filter: blur(20px);
@@ -718,6 +716,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* Contact Section */
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -754,58 +753,6 @@ body {
 .contact-item i {
     color: var(--accent-primary);
     width: 20px;
-}
-
-/* Resume Section */
-.resume-section {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: var(--accent-light);
-    border-radius: 15px;
-    border: 1px solid rgba(245, 158, 11, 0.2);
-    text-align: center;
-}
-
-.resume-section h4 {
-    color: var(--accent-primary);
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-}
-
-.resume-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.resume-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--accent-gradient);
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.resume-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
-}
-
-.resume-btn.outline {
-    background: transparent;
-    color: var(--accent-primary);
-    border: 2px solid var(--accent-primary);
-}
-
-.resume-btn.outline:hover {
-    background: var(--accent-primary);
-    color: white;
 }
 
 .social-links {
@@ -939,6 +886,18 @@ body {
     }
 }
 
+/* Scroll animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .hero-title {
@@ -961,7 +920,7 @@ body {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
@@ -1022,17 +981,16 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .skills-content {
-        grid-template-columns: 1fr;
-    }
-    
     .container {
         padding: 0 1rem;
     }
 
-    .resume-buttons {
-        flex-direction: column;
-        align-items: center;
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1049,15 +1007,8 @@ body {
     .btn {
         justify-content: center;
     }
-}
-/* Scroll animations */
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
-}
 
-.fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
