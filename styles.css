@@ -106,7 +106,8 @@ body {
     height: 70px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0.5rem 1rem;
+
 }
 
 .nav-logo .logo-text {
@@ -1032,7 +1033,7 @@ body {
         grid-template-columns: 1fr;
     }
 }
-Portfolio\pushkargupta75.github.io\styles.css
+
 .navbar {
     position: fixed;
     top: 0;
@@ -1135,41 +1136,4 @@ Portfolio\pushkargupta75.github.io\styles.css
     transition: background-color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background: var(--bg-glass);
-        backdrop-filter: blur(10px);
-        padding: 2rem;
-        transition: 0.3s ease;
-    }
 
-    .nav-menu.active {
-        top: 70px;
-    }
-
-    .nav-section {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .social-section {
-        border-left: none;
-        border-top: 1px solid var(--border-color);
-        padding-top: 1rem;
-        margin-top: 1rem;
-        padding-left: 0;
-        margin-left: 0;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .hamburger {
-        display: block;
-    }
-}
