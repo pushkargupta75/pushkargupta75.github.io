@@ -110,11 +110,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     new TypeWriter(typingTextElement, [
         'Python Enthusiast', 
-        'AI & ML Student',
+        'AI Enthusiast',
         'Problem Solver',
         'Tech Innovator',
+        'Machine Learning Enthusiast',
         'Frontend Developer',
-        'Data Science Learner'
     ]);
 
     // --- Animated Counters ---
