@@ -204,16 +204,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const subject = formData.get('subject');
         const message = formData.get('message');
         
-        // EmailJS send function (you'll need to set this up)
-        emailjs.send('service_vge7po1', 'template_8x4ija9', {
+        // EmailJS send function with auto-reply
+        const templateParams = {
             from_name: name,
             from_email: email,
             subject: subject,
             message: message,
             to_email: 'pushkargupta993@gmail.com'
-        })
-        .then(function(response) {
-            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+        };
+
+        // Send notification to you
+        Promise.all([
+            emailjs.send('service_vge7po1', 'template_8x4ija9', templateParams),
+            // Send auto-reply to user
+            emailjs.send('service_vge7po1', 'template_uwx63v8', {
+                ...templateParams,
+                to_email: email // Send auto-reply to user's email
+            })
+        ])
+        .then(function(responses) {
+            showNotification('Message sent successfully! Check your email for confirmation. I\'ll get back to you soon!', 'success');
             contactForm.reset();
         })
         .catch(function(error) {
@@ -236,7 +246,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000);
     });
     
-    // Notification system
     function showNotification(message, type = 'info') {
         const notification = document.createElement('div');
         const colors = {
@@ -291,7 +300,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
     
-    // Make showNotification globally accessible
     window.showNotification = showNotification;
     
     // Enhanced skill items hover effects
@@ -309,7 +317,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Parallax effect for hero section
     let ticking = false;
     
     function updateParallax() {
@@ -331,7 +338,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Add scroll to top button
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
     scrollTopBtn.style.cssText = `
@@ -385,5 +391,7 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollTopBtn.style.boxShadow = '0 8px 25px rgba(245, 158, 11, 0.3)';
     });
 });
-EmailJS CDN (uncomment when you set up EmailJS)
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    </script>
+    
+    EmailJS CDN (uncomment when you set up EmailJS)
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
