@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Theme Management
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     
-    // Check for saved theme preference or default to dark
     const savedTheme = localStorage.getItem('theme') || 'dark';
     body.setAttribute('data-theme', savedTheme);
     
@@ -14,14 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
         body.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         
-        // Add a smooth transition effect
         body.style.transition = 'all 0.3s ease';
         setTimeout(() => {
             body.style.transition = '';
         }, 300);
     });
 
-    // Mobile navigation
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -38,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     
     window.addEventListener('scroll', function() {
@@ -49,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Active navigation link
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     
@@ -73,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Enhanced typing animation
     const typeWriter = {
         words: [
             'Python Enthusiast', 
@@ -122,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     typeWriter.init();
     
-    // Animated counters
     const animateCounters = () => {
         const counters = document.querySelectorAll('.stat-number');
         
@@ -145,7 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
     
-    // Intersection Observer for animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -155,22 +146,20 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                
-                // Trigger counter animation for stats section
+  
                 if (entry.target.querySelector('.stat-number')) {
                     animateCounters();
                 }
             }
         });
     }, observerOptions);
-    
-    // Observe elements for animation
+
     const animateElements = document.querySelectorAll('.fade-in-up');
     animateElements.forEach(el => {
         observer.observe(el);
     });
     
-    // Smooth scrolling for anchor links
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -185,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Contact form handling with EmailJS
+
     const contactForm = document.getElementById('contact-form');
     
     contactForm.addEventListener('submit', function(e) {
@@ -197,15 +186,14 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
         
-        // Get form data
+      
         const formData = new FormData(this);
         const name = formData.get('name');
         const email = formData.get('email');
         const subject = formData.get('subject');
         const message = formData.get('message');
         
-        // EmailJS send function (you'll need to set this up)
-        emailjs.send('your_service_id', 'your_template_id', {
+        emailjs.send('service_vge7po1', 'template_8x4ija9', {
             from_name: name,
             from_email: email,
             subject: subject,
@@ -225,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = false;
         });
         
-        // Fallback for when EmailJS is not configured
+     
         setTimeout(() => {
             if (!window.emailjs) {
                 showNotification('Email service not configured. Please email me directly at pushkargupta993@gmail.com', 'info');
@@ -236,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000);
     });
     
-    // Notification system
+
     function showNotification(message, type = 'info') {
         const notification = document.createElement('div');
         const colors = {
@@ -291,10 +279,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
     
-    // Make showNotification globally accessible
+ 
     window.showNotification = showNotification;
     
-    // Enhanced skill items hover effects
+    
     const skillItems = document.querySelectorAll('.skill-item');
     skillItems.forEach(item => {
         item.addEventListener('mouseenter', () => {
@@ -308,8 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
             icon.style.transform = 'scale(1) rotate(0deg)';
         });
     });
-    
-    // Parallax effect for hero section
+  
     let ticking = false;
     
     function updateParallax() {
@@ -331,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Add scroll to top button
+
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
     scrollTopBtn.style.cssText = `
@@ -385,7 +372,4 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollTopBtn.style.boxShadow = '0 8px 25px rgba(245, 158, 11, 0.3)';
     });
 });
-    </script>
-    
-    <!-- EmailJS CDN (uncomment when you set up EmailJS) -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
+
