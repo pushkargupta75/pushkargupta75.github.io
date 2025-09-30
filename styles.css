@@ -817,6 +817,18 @@ body {
     font-size: 0.9rem;
 }
 
+
+.education-item h4 a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.education-item h4 a:hover {
+    color: var(--accent-primary);
+}
+
+
 /* ===========================
    CONTACT SECTION
 =========================== */
