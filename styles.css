@@ -1561,3 +1561,22 @@ body {
         --shadow-color: rgba(0, 0, 0, 0.3);
     }
 }
+.nav-section {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+    
+    .social-section {
+        flex-direction: row !important;
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        padding-left: 0;
+        padding-top: var(--spacing-lg);
+        margin-left: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .social-section .nav-item {
+        margin: 0;
+    }
