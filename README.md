@@ -47,6 +47,11 @@ Python-based AI assistant that performs system tasks, opens applications, fetche
 Smart job preparation platform integrating LLMs for mock interviews, NLP-based resume–JD matching, and job search automation via Naukri & LinkedIn APIs.  
 **Tech Stack:** Python, Flask, OpenAI API, third-party job APIs
 
+### 📄 [Sci_Synth](https://github.com/pushkargupta75/sci_synth)
+**AI-Powered Scientific Paper Analysis with RAG**  
+100% free research paper analyzer using Groq's Llama 3.3 and HuggingFace embeddings. Features smart PDF processing, Q&A with citations, multi-paper synthesis, contradiction detection, gap analysis, and citation network visualization.  
+**Tech Stack:** Python, LangChain, Groq API, HuggingFace, Streamlit, RAG, Chroma
+
 ---
 
 ## 🎓 Education
